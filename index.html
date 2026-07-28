@@ -1,87 +1,269 @@
 <!DOCTYPE html>
-<html> 
-    <head> 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sam Chin | Portfolio</title>
-        <link rel="stylesheet" href="styles.css"  />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sam Chin | Software Developer</title>
 
-        
-    </head>
-    <body> 
-        <header> 
-            <div class = "menubar">
-                <a target= "_blank" href = "https://github.com/thomasamff"><span><i class="fa-brands fa-github"></i></span></a>
-                <a href = "#home"><span>Home</span></a>
-                <a href = "#skills"><span>Skills</span></a>
-                <a href = "#proj"><span>Projects</span></a>
-                <a href = "#contact"><span>Contact</span></a>
-            </div>
-        </header>
-        <main> 
-            <section id = "home" class = "tab"> 
-                <h1> Hi I am <br>Sam Chin</h1>
-                <img 
-                src = "public/pfp.jpg" 
-                id = "pfp"
-                />
-                <h3> Home</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien 
-                    vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus 
-                    leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum
-                    egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper 
-                    vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-            </section>
+<style>
 
-            <section id = "skills" class = "tab"> 
-                <img 
-                src = "public/pfp.jpg" 
-                id = "stub-2"
-                />
-                <h3> Skills</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien 
-                    vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus 
-                    leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum
-                    egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper 
-                    vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-            </section>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-            <section id = "proj" class = "tab"> 
-                <h3> Projects </h3>
-                <div class = "proj-row" id = "row-1"> 
-                    <div class = "projects">
-                        <a href = "">Project 1</a>
-                        <a href = "">Project 2</a>
-                        <a href = "">Project 3</a>
-                    </div>
-                </div>
+body{
+    background:#f4f4f4;
+    color:#222;
+    line-height:1.6;
+}
 
-                <div class = "proj-row" id = "row-2"> 
-                    <div class = "projects">
-                        <a href = "">Project 4</a>
-                    </div>
-                </div>
-            </section>
+header{
+    background:#1f2937;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
 
-            <section id = "contact" class = "tab"> 
-                
-                <h3>Contact Me</h3>
-                <div class = "ctc"> 
-                    <input type = "text" placeholder = "First Name" id = "c1"></input>
-                    <input type = "text" placeholder = "Last Name" id = "c2"></input>
-                    <input type = "email" placeholder = "Email" id = "c3"></input>
-                    <input type = "tel" placeholder = "Phone Number" id = "c4"></input>
-                    <textarea id = "c5" placeholder = "Enter any comments"></textarea>     
-                </div>
-                <input type = "submit" value = "Submit Report" id = "c6"></input>  
-                
-                
-            </section>
-        </main>
+header h1{
+    font-size:3rem;
+}
 
-        <script src = "script.js" defer></script>
-    </body>    
+header p{
+    margin-top:10px;
+    color:#d1d5db;
+}
+
+nav{
+    margin-top:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 25px;
+}
+
+h2{
+    margin-bottom:20px;
+    color:#111827;
+}
+
+.about p{
+    max-width:750px;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    margin-bottom:20px;
+}
+
+.button{
+    display:inline-block;
+    padding:10px 18px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.button:hover{
+    background:#1d4ed8;
+}
+
+.repo-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.repo{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.repo a{
+    text-decoration:none;
+    color:#2563eb;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:#1f2937;
+    color:white;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<h1>Sam Chin</h1>
+
+<p>Software Engineering Student | Full Stack Developer</p>
+
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#repos">Repositories</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section id="about" class="about">
+
+<h2>About Me</h2>
+
+<p>
+I'm a software engineering student with experience building full-stack
+applications using Java, Spring Boot, React, TypeScript, and PostgreSQL.
+I enjoy designing scalable backend systems while creating intuitive user
+interfaces.
+</p>
+
+</section>
+
+<section id="projects">
+
+<h2>Featured Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+
+<h3>Restaurant Ordering System</h3>
+
+<p>
+A full-stack web application built with React, Spring Boot, PostgreSQL,
+and Stripe that allows customers to browse menus, place orders,
+and complete online payments.
+</p>
+
+<a class="button" href="https://github.com/schin03/restaurant-ordering-system" target="_blank">
+GitHub
+</a>
+<a class="button" href="https://ordering-system-henna.vercel.app/" target="_blank">
+Demo
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Hierarchical Data Management System</h3>
+
+<p>
+A TypeScript application capable of managing thousands of JSON records,
+supporting CRUD operations, REST APIs, automated testing,
+and data visualization.
+</p>
+
+<a class="button" href="https://github.com/schin03/Hierarchical-Ordering-System" target="_blank">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="repos">
+
+<h2>Other Projects</h2>
+
+<div class="repo-list">
+
+<div class="repo">
+<a href="https://github.com/schin03/Blackjack">
+Blackjack Game
+</a>
+<p>React + Spring Boot multiplayer card game.</p>
+</div>
+
+<div class="repo">
+<a href="https://github.com/schin03/Team-Builder">
+Team Builder
+</a>
+<p>Java application using JSON persistence.</p>
+</div>
+
+<!-- <div class="repo">
+<a href="https://github.com/YOUR_USERNAME/project3">
+Project Name
+</a>
+<p>Short description.</p>
+</div>
+
+<div class="repo">
+<a href="https://github.com/YOUR_USERNAME/project4">
+Project Name
+</a>
+<p>Short description.</p>
+</div> -->
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>
+Email:
+<a href="mailto:samuel.chin0574@gmail.com">
+samuel.chin0574@gmail.com
+</a>
+</p>
+
+<p>
+GitHub:
+<a href="https://github.com/schin03">
+github.com/YOUR_USERNAME
+</a>
+</p>
+</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 Sam Chin</p>
+
+</footer>
+
+</body>
 </html>
